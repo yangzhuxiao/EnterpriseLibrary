@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="用户名" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mhc-Rt-ZFT">
+                                <rect key="frame" x="60" y="120" width="480" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="vbq-7r-Xqf">
+                                        <variation key="widthClass=compact" constant="30"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" constant="480" id="vnv-Mi-gUl">
+                                        <variation key="widthClass=compact" constant="280"/>
+                                    </constraint>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="35" y="70" width="330" height="30"/>
+                                </variation>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="手机号" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dz2-em-7Wh">
+                                <rect key="frame" x="60" y="200" width="480" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="35" y="70" width="330" height="30"/>
+                                </variation>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oks-kG-ToT">
+                                <rect key="frame" x="60" y="280" width="480" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="35" y="70" width="330" height="30"/>
+                                </variation>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OeN-jZ-82v">
+                                <rect key="frame" x="60" y="404" width="480" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="s2I-AC-Vhs">
+                                        <variation key="widthClass=compact" constant="35"/>
+                                    </constraint>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="登 录">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact">
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                </variation>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IOu-2y-Ohk">
+                                <rect key="frame" x="422" y="492" width="118" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="注册">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact">
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                </variation>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dz2-em-7Wh" firstAttribute="top" secondItem="Mhc-Rt-ZFT" secondAttribute="bottom" constant="40" id="3dh-eS-RmZ">
+                                <variation key="widthClass=compact" constant="30"/>
+                            </constraint>
+                            <constraint firstItem="oks-kG-ToT" firstAttribute="leading" secondItem="OeN-jZ-82v" secondAttribute="leading" id="5eJ-vV-z3h"/>
+                            <constraint firstItem="oks-kG-ToT" firstAttribute="top" secondItem="dz2-em-7Wh" secondAttribute="bottom" constant="40" id="ALj-KC-kIe">
+                                <variation key="widthClass=compact" constant="30"/>
+                            </constraint>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="IOu-2y-Ohk" secondAttribute="bottom" constant="83" id="Hby-dj-pf5"/>
+                            <constraint firstAttribute="centerX" secondItem="Mhc-Rt-ZFT" secondAttribute="centerX" id="OLW-hU-kKO"/>
+                            <constraint firstItem="oks-kG-ToT" firstAttribute="height" secondItem="Mhc-Rt-ZFT" secondAttribute="height" id="OYo-cy-0iM"/>
+                            <constraint firstItem="IOu-2y-Ohk" firstAttribute="trailing" secondItem="Mhc-Rt-ZFT" secondAttribute="trailing" constant="-5" id="SAa-VN-e8k"/>
+                            <constraint firstItem="Mhc-Rt-ZFT" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="UNp-bS-J8C">
+                                <variation key="widthClass=compact" constant="58"/>
+                            </constraint>
+                            <constraint firstItem="Mhc-Rt-ZFT" firstAttribute="width" secondItem="OeN-jZ-82v" secondAttribute="width" id="Y0C-ms-mB0"/>
+                            <constraint firstItem="Mhc-Rt-ZFT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="144" id="fDy-1l-qi7"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="IOu-2y-Ohk" secondAttribute="bottom" constant="60" id="jNp-1I-D9T"/>
+                            <constraint firstItem="OeN-jZ-82v" firstAttribute="top" secondItem="oks-kG-ToT" secondAttribute="bottom" constant="84" id="rSx-ON-kas"/>
+                            <constraint firstItem="dz2-em-7Wh" firstAttribute="width" secondItem="Mhc-Rt-ZFT" secondAttribute="width" id="ta8-00-Ytj"/>
+                            <constraint firstItem="oks-kG-ToT" firstAttribute="leading" secondItem="dz2-em-7Wh" secondAttribute="leading" id="vFT-tr-r8e"/>
+                            <constraint firstItem="oks-kG-ToT" firstAttribute="width" secondItem="Mhc-Rt-ZFT" secondAttribute="width" id="vbI-Gr-rqj"/>
+                            <constraint firstItem="dz2-em-7Wh" firstAttribute="height" secondItem="Mhc-Rt-ZFT" secondAttribute="height" id="vkY-AC-m7f"/>
+                            <constraint firstItem="dz2-em-7Wh" firstAttribute="leading" secondItem="Mhc-Rt-ZFT" secondAttribute="leading" id="ziB-V8-kKG"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="fDy-1l-qi7"/>
+                                <exclude reference="jNp-1I-D9T"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="339" y="387"/>
+        </scene>
+    </scenes>
+</document>
