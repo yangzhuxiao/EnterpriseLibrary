@@ -323,7 +323,7 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="130" id="igk-gX-nGY">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="bookTableViewCell" rowHeight="130" id="igk-gX-nGY" customClass="BookTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="igk-gX-nGY" id="kEB-wi-8LM">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -366,6 +366,11 @@
                                         <constraint firstItem="T9a-cF-Xae" firstAttribute="top" secondItem="kEB-wi-8LM" secondAttribute="topMargin" constant="18" id="yNK-lr-lai"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="bookAuthorsLabel" destination="zgw-mY-78v" id="BfU-nd-5d4"/>
+                                    <outlet property="bookImageView" destination="3CF-FL-UsA" id="wFn-5c-nZg"/>
+                                    <outlet property="bookNameLabel" destination="T9a-cF-Xae" id="cY6-Sv-R6b"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

@@ -68,13 +68,13 @@ static const NSString *kCDAvailability = @"availability";
 + (Book *)bookFromDoubanBookObject:(id)object
 {
     Book *book = [[Book alloc] init];
-    book.name = [object valueForKey:(NSString *)kDBTitle];
-    book.authors = [[object valueForKey:(NSString *)kDBAuthor] componentsJoinedByString:@","];
-    book.imageHref = [object valueForKey:(NSString *)kDBImageHref];
+    book.bookName = [object valueForKey:(NSString *)kDBTitle];
+    book.bookAuthors = [[object valueForKey:(NSString *)kDBAuthor] componentsJoinedByString:@","];
+    book.bookImageHref = [object valueForKey:(NSString *)kDBImageHref];
     book.bookDescription = [object valueForKey:(NSString *)kDBSummary];
-    book.authorInfo = [object valueForKey:(NSString *)kDBAuthorIntro];
-    book.price = [object valueForKey:(NSString *)kDBPrice];
-    book.publisher = [object valueForKey:(NSString *)kDBPublisher];
+    book.bookAuthorInfo = [object valueForKey:(NSString *)kDBAuthorIntro];
+    book.bookPrice = [object valueForKey:(NSString *)kDBPrice];
+    book.bookPublisher = [object valueForKey:(NSString *)kDBPublisher];
     book.publishDate = [object valueForKey:(NSString *)kDBPubdate];
     book.bookId = [object valueForKey:(NSString *)kDBBookId];
     return book;
@@ -84,47 +84,47 @@ static const NSString *kCDAvailability = @"availability";
 {
     Book *book = [[Book alloc] init];
     
-    book.name = [object valueForKey:(NSString *)kBookname];
-    book.authors = [object valueForKey:(NSString *)kBookauthors];
-    book.imageHref = [object valueForKey:(NSString *)kBookimageHref];
+    book.bookName = [object valueForKey:(NSString *)kBookname];
+    book.bookAuthors = [object valueForKey:(NSString *)kBookauthors];
+    book.bookImageHref = [object valueForKey:(NSString *)kBookimageHref];
     book.bookDescription = [object valueForKey:(NSString *)kBookdescription];
-    book.authorInfo = [object valueForKey:(NSString *)kBookauthorInfo];
-    book.price = [object valueForKey:(NSString *)kBookprice];
-    book.publisher = [object valueForKey:(NSString *)kBookpublisher];
+    book.bookAuthorInfo = [object valueForKey:(NSString *)kBookauthorInfo];
+    book.bookPrice = [object valueForKey:(NSString *)kBookprice];
+    book.bookPublisher = [object valueForKey:(NSString *)kBookpublisher];
     book.publishDate = [object valueForKey:(NSString *)kBookpublishDate];
     book.bookId = [object valueForKey:(NSString *)kBookId];
-    book.availability = [[object valueForKey:(NSString *)kBookAvailable] boolValue];
+    book.bookAvailability = [[object valueForKey:(NSString *)kBookAvailable] boolValue];
     return book;
 }
 
 + (Book *)bookFromStoreObject:(id)storedBook
 {
     Book *book = [[Book alloc] init];
-    book.name = [storedBook valueForKey:(NSString *)kCDName];
-    book.authors = [storedBook valueForKey:(NSString *)kCDAuthors];
-    book.imageHref = [storedBook valueForKey:(NSString *)kCDImageHref];
+    book.bookName = [storedBook valueForKey:(NSString *)kCDName];
+    book.bookAuthors = [storedBook valueForKey:(NSString *)kCDAuthors];
+    book.bookImageHref = [storedBook valueForKey:(NSString *)kCDImageHref];
     book.bookDescription = [storedBook valueForKey:(NSString *)kCDDescription];
-    book.authorInfo = [storedBook valueForKey:(NSString *)kCDAuthorInfo];
-    book.price = [storedBook valueForKey:(NSString *)kCDPrice];
-    book.publisher = [storedBook valueForKey:(NSString *)kCDPublisher];
+    book.bookAuthorInfo = [storedBook valueForKey:(NSString *)kCDAuthorInfo];
+    book.bookPrice = [storedBook valueForKey:(NSString *)kCDPrice];
+    book.bookPublisher = [storedBook valueForKey:(NSString *)kCDPublisher];
     book.bookId = [storedBook valueForKey:(NSString *)kCDBookId];
     book.publishDate = [storedBook valueForKey:(NSString *)kCDPublishDate];
-    book.availability = [[storedBook valueForKey:(NSString *)kCDAvailability] boolValue];
+    book.bookAvailability = [[storedBook valueForKey:(NSString *)kCDAvailability] boolValue];
     return book;
 }
 
 + (void)setManagedObject:(id)managedBook forBook:(Book *)book
 {
-    [managedBook setValue:book.name forKey:(NSString *)kCDName];
-    [managedBook setValue:book.authors forKey:(NSString *)kCDAuthors];
-    [managedBook setValue:book.imageHref  forKey:(NSString *)kCDImageHref];
+    [managedBook setValue:book.bookName forKey:(NSString *)kCDName];
+    [managedBook setValue:book.bookAuthors forKey:(NSString *)kCDAuthors];
+    [managedBook setValue:book.bookImageHref  forKey:(NSString *)kCDImageHref];
     [managedBook setValue:book.bookDescription forKey:(NSString *)kCDDescription];
-    [managedBook setValue:book.authorInfo forKey:(NSString *)kCDAuthorInfo];
-    [managedBook setValue:book.price forKey:(NSString *)kCDPrice];
-    [managedBook setValue:book.publisher forKey:(NSString *)kCDPublisher];
+    [managedBook setValue:book.bookAuthorInfo forKey:(NSString *)kCDAuthorInfo];
+    [managedBook setValue:book.bookPrice forKey:(NSString *)kCDPrice];
+    [managedBook setValue:book.bookPublisher forKey:(NSString *)kCDPublisher];
     [managedBook setValue:book.bookId forKey:(NSString *)kCDBookId];
     [managedBook setValue:book.publishDate forKey:(NSString *)kCDPublishDate];
-    [managedBook setValue:[NSNumber numberWithBool:book.availability] forKey:(NSString *)kCDAvailability];
+    [managedBook setValue:[NSNumber numberWithBool:book.bookAvailability] forKey:(NSString *)kCDAvailability];
 }
 
 #pragma mark - private methods

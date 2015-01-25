@@ -13,11 +13,14 @@
 #import "JsonDataFetcher.h"
 #import "DataConverter.h"
 #import "Book.h"
+#import "BookTableViewCell.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface BooksTableViewController ()
 {
     UIView *searchBarWrapperView;
     UISearchController *searchController;
+    NSMutableArray *booksArray;
 }
 @end
 
@@ -25,6 +28,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    booksArray = [[NSMutableArray alloc] init];
 }
 
 - (IBAction)addBook:(id)sender {
@@ -94,12 +98,37 @@
             id object = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:nil];
             if (object) {
                 Book *book = [DataConverter bookFromDoubanBookObject:object];
-//                [self showBookDetailViewControllerForBook:book];
+                [booksArray addObject:book];
+                [self.tableView reloadData];
             }
         } else {
             [[CustomAlert sharedAlert] showAlertWithMessage:@"请求失败"];
         }
     }];
 }
+
+#pragma mark - UITabelViewDataSource
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return booksArray.count;
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    Book *book = [booksArray objectAtIndex:indexPath.row];
+    BookTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"bookTableViewCell"];
+    cell.bookNameLabel.text = book.bookName;
+    cell.bookAuthorsLabel.text = book.bookAuthors;
+    [cell.bookImageView sd_setImageWithURL:[NSURL URLWithString:book.bookImageHref]];
+    return cell;
+}
+
 
 @end

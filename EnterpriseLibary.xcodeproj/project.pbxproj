@@ -15,14 +15,13 @@
 		97BC96DB1A74D6BE00CC995D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97BC96DA1A74D6BE00CC995D /* QuartzCore.framework */; };
 		97BC96DD1A74D6D100CC995D /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 97BC96DC1A74D6D100CC995D /* libiconv.dylib */; };
 		97BC96DF1A74D76100CC995D /* LibzBar in Resources */ = {isa = PBXBuildFile; fileRef = 97BC96DE1A74D76100CC995D /* LibzBar */; };
-		97BC96E11A74D84C00CC995D /* libzbar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97BC96E01A74D84C00CC995D /* libzbar.a */; };
-		97BC96E41A74D85800CC995D /* libzbar-sim.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97BC96E21A74D85800CC995D /* libzbar-sim.a */; };
 		97BC96E51A74D85800CC995D /* libzbar-universal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97BC96E31A74D85800CC995D /* libzbar-universal.a */; };
 		97BC96E81A74D96700CC995D /* CustomActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 97BC96E71A74D96700CC995D /* CustomActivityIndicator.m */; };
 		97BC96EC1A74D9AE00CC995D /* CustomAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 97BC96EB1A74D9AE00CC995D /* CustomAlert.m */; };
 		97BC96F01A74DA6600CC995D /* JsonDataFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 97BC96EF1A74DA6600CC995D /* JsonDataFetcher.m */; };
 		97BC96F51A74DB2C00CC995D /* DataConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 97BC96F41A74DB2C00CC995D /* DataConverter.m */; };
 		97BC96F91A74DBBF00CC995D /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = 97BC96F81A74DBBF00CC995D /* Book.m */; };
+		97BC96FC1A74E02A00CC995D /* BookTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 97BC96FB1A74E02A00CC995D /* BookTableViewCell.m */; };
 		97E9E0481A73B85A003D6EAE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 97E9E0471A73B85A003D6EAE /* main.m */; };
 		97E9E04B1A73B85A003D6EAE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 97E9E04A1A73B85A003D6EAE /* AppDelegate.m */; };
 		97E9E04E1A73B85A003D6EAE /* EnterpriseLibary.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 97E9E04C1A73B85A003D6EAE /* EnterpriseLibary.xcdatamodeld */; };
@@ -31,6 +30,7 @@
 		97E9E0561A73B85A003D6EAE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97E9E0551A73B85A003D6EAE /* Images.xcassets */; };
 		97E9E0591A73B85A003D6EAE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97E9E0571A73B85A003D6EAE /* LaunchScreen.xib */; };
 		97E9E0651A73B85B003D6EAE /* EnterpriseLibaryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 97E9E0641A73B85B003D6EAE /* EnterpriseLibaryTests.m */; };
+		CC098C6DBB9D44018A549A60 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC2E25B1AFDC486B92073FF8 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		37057618D0D3458996FF3499 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		97BC96C81A749D3300CC995D /* LibraryInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LibraryInfoViewController.h; sourceTree = "<group>"; };
 		97BC96C91A749D3300CC995D /* LibraryInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LibraryInfoViewController.m; sourceTree = "<group>"; };
 		97BC96CB1A74CA6500CC995D /* BooksTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BooksTableViewController.h; sourceTree = "<group>"; };
@@ -54,8 +55,6 @@
 		97BC96DA1A74D6BE00CC995D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		97BC96DC1A74D6D100CC995D /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
 		97BC96DE1A74D76100CC995D /* LibzBar */ = {isa = PBXFileReference; lastKnownFileType = folder; path = LibzBar; sourceTree = "<group>"; };
-		97BC96E01A74D84C00CC995D /* libzbar.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libzbar.a; path = EnterpriseLibary/LibzBar/libzbar.a; sourceTree = "<group>"; };
-		97BC96E21A74D85800CC995D /* libzbar-sim.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libzbar-sim.a"; path = "EnterpriseLibary/LibzBar/libzbar-sim.a"; sourceTree = "<group>"; };
 		97BC96E31A74D85800CC995D /* libzbar-universal.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libzbar-universal.a"; path = "EnterpriseLibary/LibzBar/libzbar-universal.a"; sourceTree = "<group>"; };
 		97BC96E61A74D96700CC995D /* CustomActivityIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomActivityIndicator.h; sourceTree = "<group>"; };
 		97BC96E71A74D96700CC995D /* CustomActivityIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomActivityIndicator.m; sourceTree = "<group>"; };
@@ -68,6 +67,8 @@
 		97BC96F41A74DB2C00CC995D /* DataConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataConverter.m; sourceTree = "<group>"; };
 		97BC96F71A74DBBF00CC995D /* Book.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Book.h; sourceTree = "<group>"; };
 		97BC96F81A74DBBF00CC995D /* Book.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Book.m; sourceTree = "<group>"; };
+		97BC96FA1A74E02A00CC995D /* BookTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookTableViewCell.h; sourceTree = "<group>"; };
+		97BC96FB1A74E02A00CC995D /* BookTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookTableViewCell.m; sourceTree = "<group>"; };
 		97E9E0421A73B85A003D6EAE /* EnterpriseLibary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EnterpriseLibary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97E9E0461A73B85A003D6EAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		97E9E0471A73B85A003D6EAE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -82,6 +83,7 @@
 		97E9E05E1A73B85B003D6EAE /* EnterpriseLibaryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EnterpriseLibaryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		97E9E0631A73B85B003D6EAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		97E9E0641A73B85B003D6EAE /* EnterpriseLibaryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EnterpriseLibaryTests.m; sourceTree = "<group>"; };
+		BC2E25B1AFDC486B92073FF8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,14 +91,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97BC96E41A74D85800CC995D /* libzbar-sim.a in Frameworks */,
 				97BC96E51A74D85800CC995D /* libzbar-universal.a in Frameworks */,
-				97BC96E11A74D84C00CC995D /* libzbar.a in Frameworks */,
 				97BC96DD1A74D6D100CC995D /* libiconv.dylib in Frameworks */,
 				97BC96DB1A74D6BE00CC995D /* QuartzCore.framework in Frameworks */,
 				97BC96D91A74D6AE00CC995D /* CoreVideo.framework in Frameworks */,
 				97BC96D71A74D6A000CC995D /* CoreMedia.framework in Frameworks */,
 				97BC96D51A74D69200CC995D /* AVFoundation.framework in Frameworks */,
+				CC098C6DBB9D44018A549A60 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +111,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7AFA6DC180754B5A97DB116C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BC2E25B1AFDC486B92073FF8 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		97BC96E91A74D97000CC995D /* ViewHelper */ = {
 			isa = PBXGroup;
 			children = (
@@ -151,9 +160,7 @@
 		97E9E0391A73B85A003D6EAE = {
 			isa = PBXGroup;
 			children = (
-				97BC96E21A74D85800CC995D /* libzbar-sim.a */,
 				97BC96E31A74D85800CC995D /* libzbar-universal.a */,
-				97BC96E01A74D84C00CC995D /* libzbar.a */,
 				97BC96DC1A74D6D100CC995D /* libiconv.dylib */,
 				97BC96DA1A74D6BE00CC995D /* QuartzCore.framework */,
 				97BC96D81A74D6AD00CC995D /* CoreVideo.framework */,
@@ -162,6 +169,8 @@
 				97E9E0441A73B85A003D6EAE /* EnterpriseLibary */,
 				97E9E0611A73B85B003D6EAE /* EnterpriseLibaryTests */,
 				97E9E0431A73B85A003D6EAE /* Products */,
+				37057618D0D3458996FF3499 /* Pods.xcconfig */,
+				7AFA6DC180754B5A97DB116C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -190,6 +199,8 @@
 				97BC96C91A749D3300CC995D /* LibraryInfoViewController.m */,
 				97BC96CB1A74CA6500CC995D /* BooksTableViewController.h */,
 				97BC96CC1A74CA6500CC995D /* BooksTableViewController.m */,
+				97BC96FA1A74E02A00CC995D /* BookTableViewCell.h */,
+				97BC96FB1A74E02A00CC995D /* BookTableViewCell.m */,
 				97E9E0521A73B85A003D6EAE /* Main.storyboard */,
 				97BC96DE1A74D76100CC995D /* LibzBar */,
 				97E9E0551A73B85A003D6EAE /* Images.xcassets */,
@@ -233,9 +244,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 97E9E0681A73B85B003D6EAE /* Build configuration list for PBXNativeTarget "EnterpriseLibary" */;
 			buildPhases = (
+				B20D775BD170437DA0A17F1D /* Check Pods Manifest.lock */,
 				97E9E03E1A73B85A003D6EAE /* Sources */,
 				97E9E03F1A73B85A003D6EAE /* Frameworks */,
 				97E9E0401A73B85A003D6EAE /* Resources */,
+				7D508A2690254DE6AD375452 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -322,6 +335,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7D508A2690254DE6AD375452 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B20D775BD170437DA0A17F1D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		97E9E03E1A73B85A003D6EAE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -331,6 +377,7 @@
 				97E9E04E1A73B85A003D6EAE /* EnterpriseLibary.xcdatamodeld in Sources */,
 				97BC96F01A74DA6600CC995D /* JsonDataFetcher.m in Sources */,
 				97BC96E81A74D96700CC995D /* CustomActivityIndicator.m in Sources */,
+				97BC96FC1A74E02A00CC995D /* BookTableViewCell.m in Sources */,
 				97BC96F91A74DBBF00CC995D /* Book.m in Sources */,
 				97BC96F51A74DB2C00CC995D /* DataConverter.m in Sources */,
 				97BC96EC1A74D9AE00CC995D /* CustomAlert.m in Sources */,
@@ -459,6 +506,7 @@
 		};
 		97E9E0691A73B85B003D6EAE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 37057618D0D3458996FF3499 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = EnterpriseLibary/Info.plist;
@@ -473,6 +521,7 @@
 		};
 		97E9E06A1A73B85B003D6EAE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 37057618D0D3458996FF3499 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = EnterpriseLibary/Info.plist;

@@ -12,7 +12,7 @@
 
 - (BOOL)isSameBook:(Book *)book
 {
-    return [self.name isEqualToString:book.name] && [self.authors isEqualToString:book.authors];
+    return [self.bookName isEqualToString:book.bookName] && [self.bookAuthors isEqualToString:book.bookAuthors];
 }
 
 @end

@@ -10,16 +10,16 @@
 
 @interface Book : NSObject
 
-@property (copy, nonatomic) NSString *name;
-@property (copy, nonatomic) NSString *authors;
-@property (copy, nonatomic) NSString *imageHref;
+@property (copy, nonatomic) NSString *bookName;
+@property (copy, nonatomic) NSString *bookAuthors;
+@property (copy, nonatomic) NSString *bookImageHref;
 @property (copy, nonatomic) NSString *bookDescription;
-@property (copy, nonatomic) NSString *authorInfo;
-@property (copy, nonatomic) NSString *price;
-@property (copy, nonatomic) NSString *publisher;
+@property (copy, nonatomic) NSString *bookAuthorInfo;
+@property (copy, nonatomic) NSString *bookPrice;
+@property (copy, nonatomic) NSString *bookPublisher;
 @property (copy, nonatomic) NSString *publishDate;
 @property (copy, nonatomic) NSString *bookId;
-@property (assign, nonatomic) BOOL availability;
+@property (assign, nonatomic) BOOL bookAvailability;
 
 - (BOOL)isSameBook:(Book *)book;
 
