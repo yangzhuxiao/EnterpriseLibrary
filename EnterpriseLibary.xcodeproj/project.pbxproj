@@ -418,6 +418,7 @@
 				97E9E06A1A73B85B003D6EAE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		97E9E06B1A73B85B003D6EAE /* Build configuration list for PBXNativeTarget "EnterpriseLibaryTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +427,7 @@
 				97E9E06D1A73B85B003D6EAE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
