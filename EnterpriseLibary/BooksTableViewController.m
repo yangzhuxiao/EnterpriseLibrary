@@ -21,4 +21,20 @@
     [super viewDidLoad];
 }
 
+- (IBAction)addBook:(id)sender {
+    UIActionSheet *selectAddMethod = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"扫描ISBN码",@"搜索书名、作者", nil];
+    [selectAddMethod showInView:self.view];
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0) {
+        NSLog(@"scanning....");
+        return;
+    }
+    if (buttonIndex == 1) {
+        NSLog(@"searching....");
+        return;
+    }
+}
 @end

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BooksTableViewController : UITableViewController
+@interface BooksTableViewController : UITableViewController <UIActionSheetDelegate>
+- (IBAction)addBook:(id)sender;
 
 @end
