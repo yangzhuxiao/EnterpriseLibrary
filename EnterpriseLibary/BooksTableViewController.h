@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LibzBar/Headers/ZBarSDK/ZBarSDK.h"
 
-@interface BooksTableViewController : UITableViewController <UIActionSheetDelegate>
+@interface BooksTableViewController : UITableViewController <UIActionSheetDelegate, ZBarReaderDelegate>
 - (IBAction)addBook:(id)sender;
 
 @end
