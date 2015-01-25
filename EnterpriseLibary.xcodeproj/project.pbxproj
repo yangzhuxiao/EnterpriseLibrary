@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		97BC96CA1A749D3300CC995D /* LibraryInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97BC96C91A749D3300CC995D /* LibraryInfoViewController.m */; };
+		97BC96CD1A74CA6500CC995D /* BooksTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97BC96CC1A74CA6500CC995D /* BooksTableViewController.m */; };
 		97E9E0481A73B85A003D6EAE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 97E9E0471A73B85A003D6EAE /* main.m */; };
 		97E9E04B1A73B85A003D6EAE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 97E9E04A1A73B85A003D6EAE /* AppDelegate.m */; };
 		97E9E04E1A73B85A003D6EAE /* EnterpriseLibary.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 97E9E04C1A73B85A003D6EAE /* EnterpriseLibary.xcdatamodeld */; };
@@ -28,6 +30,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		97BC96C81A749D3300CC995D /* LibraryInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LibraryInfoViewController.h; sourceTree = "<group>"; };
+		97BC96C91A749D3300CC995D /* LibraryInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LibraryInfoViewController.m; sourceTree = "<group>"; };
+		97BC96CB1A74CA6500CC995D /* BooksTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BooksTableViewController.h; sourceTree = "<group>"; };
+		97BC96CC1A74CA6500CC995D /* BooksTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BooksTableViewController.m; sourceTree = "<group>"; };
 		97E9E0421A73B85A003D6EAE /* EnterpriseLibary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EnterpriseLibary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97E9E0461A73B85A003D6EAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		97E9E0471A73B85A003D6EAE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -87,6 +93,10 @@
 				97E9E04A1A73B85A003D6EAE /* AppDelegate.m */,
 				97E9E04F1A73B85A003D6EAE /* LoginViewController.h */,
 				97E9E0501A73B85A003D6EAE /* LoginViewController.m */,
+				97BC96C81A749D3300CC995D /* LibraryInfoViewController.h */,
+				97BC96C91A749D3300CC995D /* LibraryInfoViewController.m */,
+				97BC96CB1A74CA6500CC995D /* BooksTableViewController.h */,
+				97BC96CC1A74CA6500CC995D /* BooksTableViewController.m */,
 				97E9E0521A73B85A003D6EAE /* Main.storyboard */,
 				97E9E0551A73B85A003D6EAE /* Images.xcassets */,
 				97E9E0571A73B85A003D6EAE /* LaunchScreen.xib */,
@@ -224,8 +234,10 @@
 			files = (
 				97E9E04B1A73B85A003D6EAE /* AppDelegate.m in Sources */,
 				97E9E04E1A73B85A003D6EAE /* EnterpriseLibary.xcdatamodeld in Sources */,
+				97BC96CA1A749D3300CC995D /* LibraryInfoViewController.m in Sources */,
 				97E9E0511A73B85A003D6EAE /* LoginViewController.m in Sources */,
 				97E9E0481A73B85A003D6EAE /* main.m in Sources */,
+				97BC96CD1A74CA6500CC995D /* BooksTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
