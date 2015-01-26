@@ -29,6 +29,7 @@ static const NSString *kCDName = @"bookName";
 static const NSString *kCDAuthors = @"bookAuthors";
 static const NSString *kCDBookId = @"bookId";
 static const NSString *kCDAvailability = @"bookAvailability";
+static const NSString *kCDBookAddTime = @"bookAddTime";
 
 + (BookStore *)sharedStore
 {
@@ -131,7 +132,7 @@ static const NSString *kCDAvailability = @"bookAvailability";
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:(NSString *)kEntityName];
 //    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"library.libraryId == %@", [[LibraryManager currentLibrary] libraryId]];
 //    [request setPredicate:predicate];
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:(NSString *)kCDName ascending:YES];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:(NSString *)kCDBookAddTime ascending:NO];
     [request setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
     
     return [[self managedObjectContext] executeFetchRequest:request error:nil];

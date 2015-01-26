@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6252" systemVersion="14A389" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Book" syncable="YES">
+        <attribute name="bookAddTime" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="bookAuthorInfo" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="bookAuthors" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="bookAvailability" optional="YES" attributeType="Boolean" syncable="YES"/>
@@ -27,7 +28,7 @@
         <relationship name="libray" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Library" inverseName="users" inverseEntity="Library" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Book" positionX="-63" positionY="-18" width="128" height="210"/>
+        <element name="Book" positionX="-63" positionY="-18" width="128" height="225"/>
         <element name="Library" positionX="-54" positionY="72" width="128" height="118"/>
         <element name="User" positionX="-36" positionY="72" width="128" height="103"/>
     </elements>

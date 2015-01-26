@@ -22,6 +22,7 @@
 @property (copy, nonatomic) NSString *bookPublishDate;
 @property (copy, nonatomic) NSString *bookId;
 @property (assign, nonatomic) BOOL bookAvailability;
+@property (copy, nonatomic) NSDate *bookAddTime;
 
 - (BOOL)isSameBook:(Book *)book;
 

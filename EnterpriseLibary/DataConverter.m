@@ -41,6 +41,7 @@ static const NSString *kCDBookPublisher = @"bookPublisher";
 static const NSString *kCDBookId = @"bookId";
 static const NSString *kCDBookPublishDate = @"bookPublishDate";
 static const NSString *kCDBookAvailability = @"bookAvailability";
+static const NSString *kCDBookAddTime = @"bookAddTime";
 
 @implementation DataConverter
 
@@ -78,6 +79,7 @@ static const NSString *kCDBookAvailability = @"bookAvailability";
     book.bookId = [object valueForKey:(NSString *)kDBBookId];
     
     book.libraryId = [object valueForKey:(NSString *)[[LibraryManager currentLibrary] libraryId]];
+    book.bookAddTime = [NSDate date];
     return book;
 }
 
@@ -109,6 +111,8 @@ static const NSString *kCDBookAvailability = @"bookAvailability";
     [managedBook setValue:book.bookId forKey:(NSString *)kCDBookId];
     [managedBook setValue:book.bookPublishDate forKey:(NSString *)kCDBookPublishDate];
     [managedBook setValue:[NSNumber numberWithBool:book.bookAvailability] forKey:(NSString *)kCDBookAvailability];
+    
+    [managedBook setValue:book.bookAddTime forKey:(NSString *)kCDBookAddTime];
 }
 
 @end
