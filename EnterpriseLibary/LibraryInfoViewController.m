@@ -7,11 +7,29 @@
 //
 
 #import "LibraryInfoViewController.h"
+#import "Library.h"
+#import "LibraryManager.h"
+#import "LibraryStore.h"
 
 @interface LibraryInfoViewController ()
 
 @end
 
 @implementation LibraryInfoViewController
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    Library *testLibrary = [[Library alloc] init];
+    testLibrary.libraryId = @"007";
+    testLibrary.libraryName = @"James Bond";
+    testLibrary.libraryAdminId = @"009";
+    
+    [LibraryManager saveLibraryToUserDefaults:testLibrary];
+    
+    
+    [[LibraryStore sharedStore] addLibraryToLibraryStore:testLibrary];
+}
 
 @end

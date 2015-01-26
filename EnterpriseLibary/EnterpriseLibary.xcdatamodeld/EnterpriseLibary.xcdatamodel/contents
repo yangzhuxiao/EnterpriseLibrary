@@ -1,4 +1,34 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="Test1.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6252" systemVersion="14A389" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Book" syncable="YES">
+        <attribute name="bookAuthorInfo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="bookAuthors" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="bookAvailability" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="bookDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="bookId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="bookImageHref" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="bookName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="bookPrice" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="bookPublishDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="bookPublisher" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="library" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Library" inverseName="books" inverseEntity="Library" syncable="YES"/>
+    </entity>
+    <entity name="Library" syncable="YES">
+        <attribute name="libraryAdminId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="libraryId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="libraryName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="books" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Book" inverseName="library" inverseEntity="Book" syncable="YES"/>
+        <relationship name="users" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="User" inverseName="libray" inverseEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="User" syncable="YES">
+        <attribute name="userId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userPhoneNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="libray" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Library" inverseName="users" inverseEntity="Library" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Book" positionX="-63" positionY="-18" width="128" height="210"/>
+        <element name="Library" positionX="-54" positionY="72" width="128" height="118"/>
+        <element name="User" positionX="-36" positionY="72" width="128" height="103"/>
+    </elements>
 </model>

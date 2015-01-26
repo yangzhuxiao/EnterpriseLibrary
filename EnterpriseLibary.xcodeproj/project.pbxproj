@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		973C81281A74EB49002DEB9A /* BookStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 973C81271A74EB49002DEB9A /* BookStore.m */; };
+		973C812B1A74EB5F002DEB9A /* Store.m in Sources */ = {isa = PBXBuildFile; fileRef = 973C812A1A74EB5F002DEB9A /* Store.m */; };
+		973C812D1A74FD21002DEB9A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 973C812C1A74FD21002DEB9A /* CoreData.framework */; };
+		973C81301A750A17002DEB9A /* LibraryStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 973C812F1A750A17002DEB9A /* LibraryStore.m */; };
+		973C81331A750A5B002DEB9A /* Library.m in Sources */ = {isa = PBXBuildFile; fileRef = 973C81321A750A5B002DEB9A /* Library.m */; };
+		973C81371A750FFF002DEB9A /* LibraryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 973C81361A750FFF002DEB9A /* LibraryManager.m */; };
 		97BC96CA1A749D3300CC995D /* LibraryInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97BC96C91A749D3300CC995D /* LibraryInfoViewController.m */; };
 		97BC96CD1A74CA6500CC995D /* BooksTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97BC96CC1A74CA6500CC995D /* BooksTableViewController.m */; };
 		97BC96D51A74D69200CC995D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97BC96D41A74D69200CC995D /* AVFoundation.framework */; };
@@ -45,6 +51,17 @@
 
 /* Begin PBXFileReference section */
 		37057618D0D3458996FF3499 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		973C81261A74EB49002DEB9A /* BookStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookStore.h; sourceTree = "<group>"; };
+		973C81271A74EB49002DEB9A /* BookStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookStore.m; sourceTree = "<group>"; };
+		973C81291A74EB5F002DEB9A /* Store.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Store.h; sourceTree = "<group>"; };
+		973C812A1A74EB5F002DEB9A /* Store.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Store.m; sourceTree = "<group>"; };
+		973C812C1A74FD21002DEB9A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		973C812E1A750A17002DEB9A /* LibraryStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LibraryStore.h; sourceTree = "<group>"; };
+		973C812F1A750A17002DEB9A /* LibraryStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LibraryStore.m; sourceTree = "<group>"; };
+		973C81311A750A5B002DEB9A /* Library.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Library.h; sourceTree = "<group>"; };
+		973C81321A750A5B002DEB9A /* Library.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Library.m; sourceTree = "<group>"; };
+		973C81351A750FFF002DEB9A /* LibraryManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LibraryManager.h; sourceTree = "<group>"; };
+		973C81361A750FFF002DEB9A /* LibraryManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LibraryManager.m; sourceTree = "<group>"; };
 		97BC96C81A749D3300CC995D /* LibraryInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LibraryInfoViewController.h; sourceTree = "<group>"; };
 		97BC96C91A749D3300CC995D /* LibraryInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LibraryInfoViewController.m; sourceTree = "<group>"; };
 		97BC96CB1A74CA6500CC995D /* BooksTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BooksTableViewController.h; sourceTree = "<group>"; };
@@ -91,6 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				973C812D1A74FD21002DEB9A /* CoreData.framework in Frameworks */,
 				97BC96E51A74D85800CC995D /* libzbar-universal.a in Frameworks */,
 				97BC96DD1A74D6D100CC995D /* libiconv.dylib in Frameworks */,
 				97BC96DB1A74D6BE00CC995D /* QuartzCore.framework in Frameworks */,
@@ -114,9 +132,25 @@
 		7AFA6DC180754B5A97DB116C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				97BC96E31A74D85800CC995D /* libzbar-universal.a */,
+				97BC96DC1A74D6D100CC995D /* libiconv.dylib */,
+				97BC96DA1A74D6BE00CC995D /* QuartzCore.framework */,
+				97BC96D81A74D6AD00CC995D /* CoreVideo.framework */,
+				97BC96D61A74D6A000CC995D /* CoreMedia.framework */,
+				97BC96D41A74D69200CC995D /* AVFoundation.framework */,
+				973C812C1A74FD21002DEB9A /* CoreData.framework */,
 				BC2E25B1AFDC486B92073FF8 /* libPods.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		973C81341A750FC5002DEB9A /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				973C81351A750FFF002DEB9A /* LibraryManager.h */,
+				973C81361A750FFF002DEB9A /* LibraryManager.m */,
+			);
+			name = Managers;
 			sourceTree = "<group>";
 		};
 		97BC96E91A74D97000CC995D /* ViewHelper */ = {
@@ -144,6 +178,7 @@
 			children = (
 				97BC96F31A74DB2C00CC995D /* DataConverter.h */,
 				97BC96F41A74DB2C00CC995D /* DataConverter.m */,
+				97BC96ED1A74D9E800CC995D /* DoubanHeaders.h */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -151,8 +186,16 @@
 		97BC96F61A74DBA300CC995D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				973C81291A74EB5F002DEB9A /* Store.h */,
+				973C812A1A74EB5F002DEB9A /* Store.m */,
+				973C81261A74EB49002DEB9A /* BookStore.h */,
+				973C81271A74EB49002DEB9A /* BookStore.m */,
+				973C812E1A750A17002DEB9A /* LibraryStore.h */,
+				973C812F1A750A17002DEB9A /* LibraryStore.m */,
 				97BC96F71A74DBBF00CC995D /* Book.h */,
 				97BC96F81A74DBBF00CC995D /* Book.m */,
+				973C81311A750A5B002DEB9A /* Library.h */,
+				973C81321A750A5B002DEB9A /* Library.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -160,12 +203,6 @@
 		97E9E0391A73B85A003D6EAE = {
 			isa = PBXGroup;
 			children = (
-				97BC96E31A74D85800CC995D /* libzbar-universal.a */,
-				97BC96DC1A74D6D100CC995D /* libiconv.dylib */,
-				97BC96DA1A74D6BE00CC995D /* QuartzCore.framework */,
-				97BC96D81A74D6AD00CC995D /* CoreVideo.framework */,
-				97BC96D61A74D6A000CC995D /* CoreMedia.framework */,
-				97BC96D41A74D69200CC995D /* AVFoundation.framework */,
 				97E9E0441A73B85A003D6EAE /* EnterpriseLibary */,
 				97E9E0611A73B85B003D6EAE /* EnterpriseLibaryTests */,
 				97E9E0431A73B85A003D6EAE /* Products */,
@@ -186,11 +223,12 @@
 		97E9E0441A73B85A003D6EAE /* EnterpriseLibary */ = {
 			isa = PBXGroup;
 			children = (
-				97BC96F61A74DBA300CC995D /* Models */,
-				97BC96F21A74DB1B00CC995D /* Utils */,
 				97E9E0491A73B85A003D6EAE /* AppDelegate.h */,
 				97E9E04A1A73B85A003D6EAE /* AppDelegate.m */,
-				97BC96ED1A74D9E800CC995D /* DoubanHeaders.h */,
+				97E9E0521A73B85A003D6EAE /* Main.storyboard */,
+				973C81341A750FC5002DEB9A /* Managers */,
+				97BC96F61A74DBA300CC995D /* Models */,
+				97BC96F21A74DB1B00CC995D /* Utils */,
 				97BC96F11A74DA6A00CC995D /* NetworkHelper */,
 				97BC96E91A74D97000CC995D /* ViewHelper */,
 				97E9E04F1A73B85A003D6EAE /* LoginViewController.h */,
@@ -201,7 +239,6 @@
 				97BC96CC1A74CA6500CC995D /* BooksTableViewController.m */,
 				97BC96FA1A74E02A00CC995D /* BookTableViewCell.h */,
 				97BC96FB1A74E02A00CC995D /* BookTableViewCell.m */,
-				97E9E0521A73B85A003D6EAE /* Main.storyboard */,
 				97BC96DE1A74D76100CC995D /* LibzBar */,
 				97E9E0551A73B85A003D6EAE /* Images.xcassets */,
 				97E9E0571A73B85A003D6EAE /* LaunchScreen.xib */,
@@ -373,13 +410,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				973C81371A750FFF002DEB9A /* LibraryManager.m in Sources */,
 				97E9E04B1A73B85A003D6EAE /* AppDelegate.m in Sources */,
 				97E9E04E1A73B85A003D6EAE /* EnterpriseLibary.xcdatamodeld in Sources */,
 				97BC96F01A74DA6600CC995D /* JsonDataFetcher.m in Sources */,
+				973C812B1A74EB5F002DEB9A /* Store.m in Sources */,
 				97BC96E81A74D96700CC995D /* CustomActivityIndicator.m in Sources */,
 				97BC96FC1A74E02A00CC995D /* BookTableViewCell.m in Sources */,
 				97BC96F91A74DBBF00CC995D /* Book.m in Sources */,
 				97BC96F51A74DB2C00CC995D /* DataConverter.m in Sources */,
+				973C81281A74EB49002DEB9A /* BookStore.m in Sources */,
+				973C81331A750A5B002DEB9A /* Library.m in Sources */,
+				973C81301A750A17002DEB9A /* LibraryStore.m in Sources */,
 				97BC96EC1A74D9AE00CC995D /* CustomAlert.m in Sources */,
 				97BC96CA1A749D3300CC995D /* LibraryInfoViewController.m in Sources */,
 				97E9E0511A73B85A003D6EAE /* LoginViewController.m in Sources */,

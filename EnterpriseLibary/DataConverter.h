@@ -8,14 +8,17 @@
 
 #import <Foundation/Foundation.h>
 @class Book;
+@class Library;
 
 @interface DataConverter : NSObject
 
-// books
-+ (NSMutableArray *)booksArrayFromDoubanSearchResults:(NSData *)searchResults;
-+ (Book *)bookFromServerBookObject:(id)object;
-+ (Book *)bookFromStoreObject:(id)storedBook;
-+ (void)setManagedObject:(id)object forBook:(Book *)book;
+// library
++ (Library *)libraryFromStoreObject:(id)storedLibrary;
++ (void)setManagedObject:(id)managedLibrary forLibrary:(Library *)library;
+
+// book
 + (Book *)bookFromDoubanBookObject:(id)object;
++ (Book *)bookFromStoreObject:(id)storedBook;
++ (void)setManagedObject:(id)managedBook forBook:(Book *)book;
 
 @end

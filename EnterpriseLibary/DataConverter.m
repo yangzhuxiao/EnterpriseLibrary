@@ -7,7 +7,9 @@
 //
 
 #import "DataConverter.h"
+#import "Library.h"
 #import "Book.h"
+#import "LibraryManager.h"
 
 #pragma mark - keys in API
 // keys in Douban API
@@ -20,50 +22,47 @@ static const NSString *kDBPrice = @"price";
 static const NSString *kDBPublisher = @"publisher";
 static const NSString *kDBPubdate = @"pubdate";
 static const NSString *kDBBookId = @"id";
-
-// keys in Server API for Book
-static const NSString *kBookname = @"name";
-static const NSString *kBookauthors = @"authors";
-static const NSString *kBookimageHref = @"image_href";
-static const NSString *kBookdescription = @"description";
-static const NSString *kBookauthorInfo = @"author_info";
-static const NSString *kBookprice = @"price";
-static const NSString *kBookpublisher = @"publisher";
-static const NSString *kBookpublishDate = @"publish_date";
-static const NSString *kBookId = @"douban_book_id";
-static const NSString *kBookAvailable = @"available";
+static const NSString *kBookLibraryId = @"library";
 
 #pragma mark - keys in Core Data
+// keys in CoreData for Library
+static const NSString *kCDLibraryName = @"libraryName";
+static const NSString *kCDLibraryId = @"libraryId";
+static const NSString *kCDLibraryAdminId = @"libraryAdminId";
 
 // keys in CoreData for Book
-static const NSString *kCDName = @"name";
-static const NSString *kCDAuthors = @"authors";
-static const NSString *kCDImageHref = @"imageHref";
-static const NSString *kCDDescription = @"bookDescription";
-static const NSString *kCDAuthorInfo = @"authorInfo";
-static const NSString *kCDPrice = @"price";
-static const NSString *kCDPublisher = @"publisher";
+static const NSString *kCDBookName = @"bookName";
+static const NSString *kCDBookAuthors = @"bookAuthors";
+static const NSString *kCDBookImageHref = @"bookImageHref";
+static const NSString *kCDBookDescription = @"bookDescription";
+static const NSString *kCDBookAuthorInfo = @"bookAuthorInfo";
+static const NSString *kCDBookPrice = @"bookPrice";
+static const NSString *kCDBookPublisher = @"bookPublisher";
 static const NSString *kCDBookId = @"bookId";
-static const NSString *kCDPublishDate = @"publishDate";
-static const NSString *kCDAvailability = @"availability";
-
-@interface DataConverter ()
-
-+ (NSMutableArray *)booksArrayFromUnserializedBooksData:(NSArray *)booksData;
-
-@end
+static const NSString *kCDBookPublishDate = @"bookPublishDate";
+static const NSString *kCDBookAvailability = @"bookAvailability";
 
 @implementation DataConverter
 
-#pragma mark - Book
+#pragma mark - Library
 
-+ (NSMutableArray *)booksArrayFromDoubanSearchResults:(NSData *)searchResults
++ (Library *)libraryFromStoreObject:(id)storedLibrary
 {
-    id object = [NSJSONSerialization JSONObjectWithData:searchResults options:NSJSONReadingAllowFragments error:nil];
-    if (!object)
-        return nil;
-    return [self booksArrayFromUnserializedBooksData:[object valueForKey:@"books"]];
+    Library *library = [[Library alloc] init];
+    library.libraryName = [storedLibrary valueForKey:(NSString *)kCDLibraryName];
+    library.libraryId = [storedLibrary valueForKey:(NSString *)kCDLibraryId];
+    library.libraryAdminId = [storedLibrary valueForKey:(NSString *)kCDLibraryAdminId];
+    return library;
 }
+
++ (void)setManagedObject:(id)managedLibrary forLibrary:(Library *)library
+{
+    [managedLibrary setValue:library.libraryName forKey:(NSString *)kCDLibraryName];
+    [managedLibrary setValue:library.libraryId forKey:(NSString *)kCDLibraryId];
+    [managedLibrary setValue:library.libraryAdminId forKey:(NSString *)kCDLibraryAdminId];
+}
+
+#pragma mark - Book
 
 + (Book *)bookFromDoubanBookObject:(id)object
 {
@@ -75,68 +74,41 @@ static const NSString *kCDAvailability = @"availability";
     book.bookAuthorInfo = [object valueForKey:(NSString *)kDBAuthorIntro];
     book.bookPrice = [object valueForKey:(NSString *)kDBPrice];
     book.bookPublisher = [object valueForKey:(NSString *)kDBPublisher];
-    book.publishDate = [object valueForKey:(NSString *)kDBPubdate];
+    book.bookPublishDate = [object valueForKey:(NSString *)kDBPubdate];
     book.bookId = [object valueForKey:(NSString *)kDBBookId];
-    return book;
-}
-
-+ (Book *)bookFromServerBookObject:(id)object
-{
-    Book *book = [[Book alloc] init];
     
-    book.bookName = [object valueForKey:(NSString *)kBookname];
-    book.bookAuthors = [object valueForKey:(NSString *)kBookauthors];
-    book.bookImageHref = [object valueForKey:(NSString *)kBookimageHref];
-    book.bookDescription = [object valueForKey:(NSString *)kBookdescription];
-    book.bookAuthorInfo = [object valueForKey:(NSString *)kBookauthorInfo];
-    book.bookPrice = [object valueForKey:(NSString *)kBookprice];
-    book.bookPublisher = [object valueForKey:(NSString *)kBookpublisher];
-    book.publishDate = [object valueForKey:(NSString *)kBookpublishDate];
-    book.bookId = [object valueForKey:(NSString *)kBookId];
-    book.bookAvailability = [[object valueForKey:(NSString *)kBookAvailable] boolValue];
+    book.libraryId = [object valueForKey:(NSString *)[[LibraryManager currentLibrary] libraryId]];
     return book;
 }
 
 + (Book *)bookFromStoreObject:(id)storedBook
 {
     Book *book = [[Book alloc] init];
-    book.bookName = [storedBook valueForKey:(NSString *)kCDName];
-    book.bookAuthors = [storedBook valueForKey:(NSString *)kCDAuthors];
-    book.bookImageHref = [storedBook valueForKey:(NSString *)kCDImageHref];
-    book.bookDescription = [storedBook valueForKey:(NSString *)kCDDescription];
-    book.bookAuthorInfo = [storedBook valueForKey:(NSString *)kCDAuthorInfo];
-    book.bookPrice = [storedBook valueForKey:(NSString *)kCDPrice];
-    book.bookPublisher = [storedBook valueForKey:(NSString *)kCDPublisher];
+    book.bookName = [storedBook valueForKey:(NSString *)kCDBookName];
+    book.bookAuthors = [storedBook valueForKey:(NSString *)kCDBookAuthors];
+    book.bookImageHref = [storedBook valueForKey:(NSString *)kCDBookImageHref];
+    book.bookDescription = [storedBook valueForKey:(NSString *)kCDBookDescription];
+    book.bookAuthorInfo = [storedBook valueForKey:(NSString *)kCDBookAuthorInfo];
+    book.bookPrice = [storedBook valueForKey:(NSString *)kCDBookPrice];
+    book.bookPublisher = [storedBook valueForKey:(NSString *)kCDBookPublisher];
     book.bookId = [storedBook valueForKey:(NSString *)kCDBookId];
-    book.publishDate = [storedBook valueForKey:(NSString *)kCDPublishDate];
-    book.bookAvailability = [[storedBook valueForKey:(NSString *)kCDAvailability] boolValue];
+    book.bookPublishDate = [storedBook valueForKey:(NSString *)kCDBookPublishDate];
+    book.bookAvailability = [[storedBook valueForKey:(NSString *)kCDBookAvailability] boolValue];
     return book;
 }
 
 + (void)setManagedObject:(id)managedBook forBook:(Book *)book
 {
-    [managedBook setValue:book.bookName forKey:(NSString *)kCDName];
-    [managedBook setValue:book.bookAuthors forKey:(NSString *)kCDAuthors];
-    [managedBook setValue:book.bookImageHref  forKey:(NSString *)kCDImageHref];
-    [managedBook setValue:book.bookDescription forKey:(NSString *)kCDDescription];
-    [managedBook setValue:book.bookAuthorInfo forKey:(NSString *)kCDAuthorInfo];
-    [managedBook setValue:book.bookPrice forKey:(NSString *)kCDPrice];
-    [managedBook setValue:book.bookPublisher forKey:(NSString *)kCDPublisher];
+    [managedBook setValue:book.bookName forKey:(NSString *)kCDBookName];
+    [managedBook setValue:book.bookAuthors forKey:(NSString *)kCDBookAuthors];
+    [managedBook setValue:book.bookImageHref forKey:(NSString *)kCDBookImageHref];
+    [managedBook setValue:book.bookDescription forKey:(NSString *)kCDBookDescription];
+    [managedBook setValue:book.bookAuthorInfo forKey:(NSString *)kCDBookAuthorInfo];
+    [managedBook setValue:book.bookPrice forKey:(NSString *)kCDBookPrice];
+    [managedBook setValue:book.bookPublisher forKey:(NSString *)kCDBookPublisher];
     [managedBook setValue:book.bookId forKey:(NSString *)kCDBookId];
-    [managedBook setValue:book.publishDate forKey:(NSString *)kCDPublishDate];
-    [managedBook setValue:[NSNumber numberWithBool:book.bookAvailability] forKey:(NSString *)kCDAvailability];
-}
-
-#pragma mark - private methods
-
-+ (NSMutableArray *)booksArrayFromUnserializedBooksData:(NSArray *)booksData
-{
-    NSMutableArray *booksArray = [NSMutableArray array];
-    
-    for (id item in booksData) {
-        [booksArray addObject:[self bookFromDoubanBookObject:item]];
-    }
-    return booksArray;
+    [managedBook setValue:book.bookPublishDate forKey:(NSString *)kCDBookPublishDate];
+    [managedBook setValue:[NSNumber numberWithBool:book.bookAvailability] forKey:(NSString *)kCDBookAvailability];
 }
 
 @end

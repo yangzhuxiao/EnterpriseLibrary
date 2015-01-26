@@ -15,6 +15,7 @@
 #import "Book.h"
 #import "BookTableViewCell.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "BookStore.h"
 
 @interface BooksTableViewController ()
 {
@@ -28,7 +29,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    booksArray = [[NSMutableArray alloc] init];
+    booksArray = [[[BookStore sharedStore] storedBooks] mutableCopy];
 }
 
 - (IBAction)addBook:(id)sender {
@@ -99,6 +100,8 @@
             if (object) {
                 Book *book = [DataConverter bookFromDoubanBookObject:object];
                 [booksArray addObject:book];
+                [[BookStore sharedStore] addBookToStore:book];
+                [[BookStore sharedStore] refreshStoredBooks];
                 [self.tableView reloadData];
             }
         } else {

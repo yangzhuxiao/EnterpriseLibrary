@@ -284,11 +284,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="Ruw-Xx-MaF">
-                            <rect key="frame" x="0.0" y="0.0" width="600" height="90"/>
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hvx-6j-5cW">
-                                    <rect key="frame" x="8" y="31" width="30" height="30"/>
+                                    <rect key="frame" x="0.0" y="20" width="60" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="60" id="a58-2h-c5i"/>
+                                        <constraint firstAttribute="height" constant="40" id="yZi-Kg-agq"/>
+                                    </constraints>
                                     <state key="normal" title="返回">
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
@@ -297,13 +301,17 @@
                                     </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="馆藏图书" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ylA-Mf-VOQ">
-                                    <rect key="frame" x="252" y="31" width="96" height="29"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                    <rect key="frame" x="260" y="28" width="80" height="24"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jc1-Sq-5h6">
-                                    <rect key="frame" x="562" y="31" width="30" height="30"/>
+                                    <rect key="frame" x="540" y="20" width="60" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="lMT-iu-bq1"/>
+                                        <constraint firstAttribute="width" constant="60" id="xt2-hL-jOa"/>
+                                    </constraints>
                                     <state key="normal" title="添加">
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
@@ -315,11 +323,11 @@
                             <color key="backgroundColor" red="0.95686274510000002" green="0.94083146959999997" blue="0.90525064529999999" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="centerX" secondItem="ylA-Mf-VOQ" secondAttribute="centerX" id="48z-Yl-yvY"/>
-                                <constraint firstAttribute="trailing" secondItem="jc1-Sq-5h6" secondAttribute="trailing" constant="8" id="4gX-2e-PeE"/>
+                                <constraint firstAttribute="trailing" secondItem="jc1-Sq-5h6" secondAttribute="trailing" id="4gX-2e-PeE"/>
                                 <constraint firstItem="ylA-Mf-VOQ" firstAttribute="centerY" secondItem="jc1-Sq-5h6" secondAttribute="centerY" id="J82-51-4eZ"/>
-                                <constraint firstAttribute="centerY" secondItem="ylA-Mf-VOQ" secondAttribute="centerY" id="WHw-cJ-IlQ"/>
+                                <constraint firstAttribute="centerY" secondItem="ylA-Mf-VOQ" secondAttribute="centerY" constant="-10" id="WHw-cJ-IlQ"/>
                                 <constraint firstItem="ylA-Mf-VOQ" firstAttribute="centerY" secondItem="Hvx-6j-5cW" secondAttribute="centerY" id="keu-Kw-FJl"/>
-                                <constraint firstItem="Hvx-6j-5cW" firstAttribute="leading" secondItem="Ruw-Xx-MaF" secondAttribute="leading" constant="8" id="lxW-3p-8SP"/>
+                                <constraint firstItem="Hvx-6j-5cW" firstAttribute="leading" secondItem="Ruw-Xx-MaF" secondAttribute="leading" id="lxW-3p-8SP"/>
                             </constraints>
                         </view>
                         <prototypes>
