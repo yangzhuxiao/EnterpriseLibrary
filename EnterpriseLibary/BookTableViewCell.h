@@ -12,5 +12,6 @@
 @property (strong, nonatomic) IBOutlet UIImageView *bookImageView;
 @property (strong, nonatomic) IBOutlet UILabel *bookAuthorsLabel;
 @property (strong, nonatomic) IBOutlet UILabel *bookNameLabel;
+@property (strong, nonatomic) IBOutlet UILabel *bookCountLabel;
 
 @end

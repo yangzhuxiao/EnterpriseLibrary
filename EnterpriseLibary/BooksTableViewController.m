@@ -127,6 +127,7 @@
     BookTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"bookTableViewCell"];
     cell.bookNameLabel.text = book.bookName;
     cell.bookAuthorsLabel.text = book.bookAuthors;
+    cell.bookCountLabel.text = [NSString stringWithFormat:@"%ld 本", (long)book.bookCount];
     [cell.bookImageView sd_setImageWithURL:[NSURL URLWithString:book.bookImageHref]];
     return cell;
 }
