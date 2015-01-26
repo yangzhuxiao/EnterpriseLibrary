@@ -42,6 +42,8 @@ static const NSString *kCDBookId = @"bookId";
 static const NSString *kCDBookPublishDate = @"bookPublishDate";
 static const NSString *kCDBookAvailability = @"bookAvailability";
 static const NSString *kCDBookAddTime = @"bookAddTime";
+static const NSString *kCDBookLibraryId = @"bookLibraryId";
+static const NSString *kCDBookCount = @"bookCount";
 
 @implementation DataConverter
 
@@ -78,8 +80,9 @@ static const NSString *kCDBookAddTime = @"bookAddTime";
     book.bookPublishDate = [object valueForKey:(NSString *)kDBPubdate];
     book.bookId = [object valueForKey:(NSString *)kDBBookId];
     
-    book.libraryId = [object valueForKey:(NSString *)[[LibraryManager currentLibrary] libraryId]];
+    book.bookLibraryId = [object valueForKey:(NSString *)[[LibraryManager currentLibrary] libraryId]];
     book.bookAddTime = [NSDate date];
+    book.bookCount = 1;
     return book;
 }
 
@@ -96,6 +99,10 @@ static const NSString *kCDBookAddTime = @"bookAddTime";
     book.bookId = [storedBook valueForKey:(NSString *)kCDBookId];
     book.bookPublishDate = [storedBook valueForKey:(NSString *)kCDBookPublishDate];
     book.bookAvailability = [[storedBook valueForKey:(NSString *)kCDBookAvailability] boolValue];
+    
+    book.bookLibraryId = [storedBook valueForKey:(NSString *)kCDBookLibraryId];
+    book.bookCount = [[storedBook valueForKey:(NSString *)kCDBookCount] integerValue];
+    
     return book;
 }
 
@@ -113,6 +120,9 @@ static const NSString *kCDBookAddTime = @"bookAddTime";
     [managedBook setValue:[NSNumber numberWithBool:book.bookAvailability] forKey:(NSString *)kCDBookAvailability];
     
     [managedBook setValue:book.bookAddTime forKey:(NSString *)kCDBookAddTime];
+    [managedBook setValue:book.bookLibraryId forKey:(NSString *)kCDBookLibraryId];
+    [managedBook setValue:[NSNumber numberWithInteger:book.bookCount] forKey:(NSString *)kCDBookCount];
+
 }
 
 @end

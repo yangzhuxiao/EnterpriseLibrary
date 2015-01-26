@@ -10,8 +10,6 @@
 
 @interface Book : NSObject
 
-@property (copy, nonatomic) NSString *libraryId;
-
 @property (copy, nonatomic) NSString *bookName;
 @property (copy, nonatomic) NSString *bookAuthors;
 @property (copy, nonatomic) NSString *bookImageHref;
@@ -23,6 +21,8 @@
 @property (copy, nonatomic) NSString *bookId;
 @property (assign, nonatomic) BOOL bookAvailability;
 @property (copy, nonatomic) NSDate *bookAddTime;
+@property (copy, nonatomic) NSString *bookLibraryId;
+@property (assign, nonatomic) NSInteger bookCount;
 
 - (BOOL)isSameBook:(Book *)book;
 

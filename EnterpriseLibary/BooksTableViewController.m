@@ -90,8 +90,15 @@
             id object = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:nil];
             if (object) {
                 Book *book = [DataConverter bookFromDoubanBookObject:object];
-                [booksArray addObject:book];
-                [[BookStore sharedStore] addBookToStore:book];
+                if ([[BookStore sharedStore] storeHasBook:book]) {
+                    [[BookStore sharedStore] updateInfoForBook:book];
+
+//                    do it later
+//                    [self updateUI];
+                } else {
+                    [[BookStore sharedStore] addBookToStore:book];
+                    [booksArray addObject:book];
+                }
                 [self loadTableViewData];
                 [self.tableView reloadData];
             }
@@ -124,5 +131,35 @@
     return cell;
 }
 
+#pragma mark - Table view delegate
+
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return UITableViewCellEditingStyleDelete;
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [self deleteBook:[booksArray objectAtIndex:indexPath.row] fromTableView:tableView atIndexPath:indexPath];
+    }
+}
+
+#pragma mark - delete book
+
+- (void)deleteBook:(Book *)book fromTableView:(UITableView *)tableView atIndexPath:(NSIndexPath *)indexPath
+{
+    [booksArray removeObject:book];
+    
+    [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationLeft];
+    
+    [[BookStore sharedStore] deleteBookFromStore:book];
+//    [[UserStore sharedStore] decreseBookCountForUser:[[UserManager currentUser] userId]];
+    [self.tableView setEditing:NO];
+}
 
 @end

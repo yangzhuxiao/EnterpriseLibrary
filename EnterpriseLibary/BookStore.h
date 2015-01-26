@@ -20,6 +20,7 @@
 - (void)addBookToStore:(Book *)book;
 - (void)deleteBookFromStore:(Book *)book;
 - (void)changeStoredBookStatusWithBook:(Book *)book;
+- (void)updateInfoForBook:(Book *)book;
 
 - (BOOL)storeHasBook:(Book *)book;
 - (void)emptyBookStoreForCurrentUser;

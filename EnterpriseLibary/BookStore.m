@@ -30,6 +30,7 @@ static const NSString *kCDAuthors = @"bookAuthors";
 static const NSString *kCDBookId = @"bookId";
 static const NSString *kCDAvailability = @"bookAvailability";
 static const NSString *kCDBookAddTime = @"bookAddTime";
+static const NSString *kCDBookCount = @"bookCount";
 
 + (BookStore *)sharedStore
 {
@@ -74,11 +75,25 @@ static const NSString *kCDBookAddTime = @"bookAddTime";
     return NO;
 }
 
+- (void)updateInfoForBook:(Book *)book
+{
+    NSArray *booksArray = [self fetchBooksFromStore];
+    for (id item in booksArray) {
+        if ([book.bookId isEqualToString:[item valueForKey:(NSString *)kCDBookId]]) {
+            NSNumber *newCount = [NSNumber numberWithInteger:[[item valueForKey:(NSString *)kCDBookCount] integerValue] + 1];
+            [item setValue:newCount forKey:(NSString *)kCDBookCount];
+            [item setValue:[NSDate date] forKey:(NSString *)kCDBookAddTime];
+
+            [self saveContext];
+            [[BookStore sharedStore] refreshStoredBooks];
+            return;
+        }
+    }}
+
 - (void)deleteBookFromStore:(Book *)book
 {
     for (NSManagedObject *item in [self fetchBooksFromStore]) {
-        if ([[item valueForKey:(NSString *)kCDName] isEqualToString:book.bookName]
-            && [[item valueForKey:(NSString *)kCDAuthors] isEqualToString:book.bookAuthors]) {
+        if ([[item valueForKey:(NSString *)kCDBookId] isEqualToString:book.bookId]) {
             [[self managedObjectContext] deleteObject:item];
             [self saveContext];
             [self refreshStoredBooks];
