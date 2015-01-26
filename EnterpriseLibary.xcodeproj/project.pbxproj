@@ -13,6 +13,8 @@
 		973C81301A750A17002DEB9A /* LibraryStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 973C812F1A750A17002DEB9A /* LibraryStore.m */; };
 		973C81331A750A5B002DEB9A /* Library.m in Sources */ = {isa = PBXBuildFile; fileRef = 973C81321A750A5B002DEB9A /* Library.m */; };
 		973C81371A750FFF002DEB9A /* LibraryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 973C81361A750FFF002DEB9A /* LibraryManager.m */; };
+		97415A781A7660D50093468D /* AdminBookDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97415A771A7660D50093468D /* AdminBookDetailTableViewController.m */; };
+		97415A7B1A7660FC0093468D /* BookDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97415A7A1A7660FC0093468D /* BookDetailTableViewController.m */; };
 		97BC96CA1A749D3300CC995D /* LibraryInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97BC96C91A749D3300CC995D /* LibraryInfoViewController.m */; };
 		97BC96CD1A74CA6500CC995D /* BooksTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97BC96CC1A74CA6500CC995D /* BooksTableViewController.m */; };
 		97BC96D51A74D69200CC995D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97BC96D41A74D69200CC995D /* AVFoundation.framework */; };
@@ -62,6 +64,10 @@
 		973C81321A750A5B002DEB9A /* Library.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Library.m; sourceTree = "<group>"; };
 		973C81351A750FFF002DEB9A /* LibraryManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LibraryManager.h; sourceTree = "<group>"; };
 		973C81361A750FFF002DEB9A /* LibraryManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LibraryManager.m; sourceTree = "<group>"; };
+		97415A761A7660D50093468D /* AdminBookDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdminBookDetailTableViewController.h; sourceTree = "<group>"; };
+		97415A771A7660D50093468D /* AdminBookDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdminBookDetailTableViewController.m; sourceTree = "<group>"; };
+		97415A791A7660FC0093468D /* BookDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookDetailTableViewController.h; sourceTree = "<group>"; };
+		97415A7A1A7660FC0093468D /* BookDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookDetailTableViewController.m; sourceTree = "<group>"; };
 		97BC96C81A749D3300CC995D /* LibraryInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LibraryInfoViewController.h; sourceTree = "<group>"; };
 		97BC96C91A749D3300CC995D /* LibraryInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LibraryInfoViewController.m; sourceTree = "<group>"; };
 		97BC96CB1A74CA6500CC995D /* BooksTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BooksTableViewController.h; sourceTree = "<group>"; };
@@ -239,6 +245,10 @@
 				97BC96CC1A74CA6500CC995D /* BooksTableViewController.m */,
 				97BC96FA1A74E02A00CC995D /* BookTableViewCell.h */,
 				97BC96FB1A74E02A00CC995D /* BookTableViewCell.m */,
+				97415A761A7660D50093468D /* AdminBookDetailTableViewController.h */,
+				97415A771A7660D50093468D /* AdminBookDetailTableViewController.m */,
+				97415A791A7660FC0093468D /* BookDetailTableViewController.h */,
+				97415A7A1A7660FC0093468D /* BookDetailTableViewController.m */,
 				97BC96DE1A74D76100CC995D /* LibzBar */,
 				97E9E0551A73B85A003D6EAE /* Images.xcassets */,
 				97E9E0571A73B85A003D6EAE /* LaunchScreen.xib */,
@@ -420,11 +430,13 @@
 				97BC96F91A74DBBF00CC995D /* Book.m in Sources */,
 				97BC96F51A74DB2C00CC995D /* DataConverter.m in Sources */,
 				973C81281A74EB49002DEB9A /* BookStore.m in Sources */,
+				97415A7B1A7660FC0093468D /* BookDetailTableViewController.m in Sources */,
 				973C81331A750A5B002DEB9A /* Library.m in Sources */,
 				973C81301A750A17002DEB9A /* LibraryStore.m in Sources */,
 				97BC96EC1A74D9AE00CC995D /* CustomAlert.m in Sources */,
 				97BC96CA1A749D3300CC995D /* LibraryInfoViewController.m in Sources */,
 				97E9E0511A73B85A003D6EAE /* LoginViewController.m in Sources */,
+				97415A781A7660D50093468D /* AdminBookDetailTableViewController.m in Sources */,
 				97E9E0481A73B85A003D6EAE /* main.m in Sources */,
 				97BC96CD1A74CA6500CC995D /* BooksTableViewController.m in Sources */,
 			);
