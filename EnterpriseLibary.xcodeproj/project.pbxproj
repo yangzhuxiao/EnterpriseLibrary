@@ -15,6 +15,9 @@
 		973C81371A750FFF002DEB9A /* LibraryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 973C81361A750FFF002DEB9A /* LibraryManager.m */; };
 		97415A781A7660D50093468D /* AdminBookDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97415A771A7660D50093468D /* AdminBookDetailTableViewController.m */; };
 		97415A7B1A7660FC0093468D /* BookDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97415A7A1A7660FC0093468D /* BookDetailTableViewController.m */; };
+		97415A7E1A7664130093468D /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 97415A7D1A7664130093468D /* UserManager.m */; };
+		97415A811A76643B0093468D /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 97415A801A76643B0093468D /* User.m */; };
+		97415A841A7667720093468D /* UserStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 97415A831A7667720093468D /* UserStore.m */; };
 		97BC96CA1A749D3300CC995D /* LibraryInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97BC96C91A749D3300CC995D /* LibraryInfoViewController.m */; };
 		97BC96CD1A74CA6500CC995D /* BooksTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97BC96CC1A74CA6500CC995D /* BooksTableViewController.m */; };
 		97BC96D51A74D69200CC995D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97BC96D41A74D69200CC995D /* AVFoundation.framework */; };
@@ -68,6 +71,12 @@
 		97415A771A7660D50093468D /* AdminBookDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdminBookDetailTableViewController.m; sourceTree = "<group>"; };
 		97415A791A7660FC0093468D /* BookDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookDetailTableViewController.h; sourceTree = "<group>"; };
 		97415A7A1A7660FC0093468D /* BookDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookDetailTableViewController.m; sourceTree = "<group>"; };
+		97415A7C1A7664130093468D /* UserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserManager.h; sourceTree = "<group>"; };
+		97415A7D1A7664130093468D /* UserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserManager.m; sourceTree = "<group>"; };
+		97415A7F1A76643B0093468D /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		97415A801A76643B0093468D /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		97415A821A7667720093468D /* UserStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserStore.h; sourceTree = "<group>"; };
+		97415A831A7667720093468D /* UserStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserStore.m; sourceTree = "<group>"; };
 		97BC96C81A749D3300CC995D /* LibraryInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LibraryInfoViewController.h; sourceTree = "<group>"; };
 		97BC96C91A749D3300CC995D /* LibraryInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LibraryInfoViewController.m; sourceTree = "<group>"; };
 		97BC96CB1A74CA6500CC995D /* BooksTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BooksTableViewController.h; sourceTree = "<group>"; };
@@ -153,6 +162,8 @@
 		973C81341A750FC5002DEB9A /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				97415A7C1A7664130093468D /* UserManager.h */,
+				97415A7D1A7664130093468D /* UserManager.m */,
 				973C81351A750FFF002DEB9A /* LibraryManager.h */,
 				973C81361A750FFF002DEB9A /* LibraryManager.m */,
 			);
@@ -194,10 +205,14 @@
 			children = (
 				973C81291A74EB5F002DEB9A /* Store.h */,
 				973C812A1A74EB5F002DEB9A /* Store.m */,
+				97415A821A7667720093468D /* UserStore.h */,
+				97415A831A7667720093468D /* UserStore.m */,
 				973C81261A74EB49002DEB9A /* BookStore.h */,
 				973C81271A74EB49002DEB9A /* BookStore.m */,
 				973C812E1A750A17002DEB9A /* LibraryStore.h */,
 				973C812F1A750A17002DEB9A /* LibraryStore.m */,
+				97415A7F1A76643B0093468D /* User.h */,
+				97415A801A76643B0093468D /* User.m */,
 				97BC96F71A74DBBF00CC995D /* Book.h */,
 				97BC96F81A74DBBF00CC995D /* Book.m */,
 				973C81311A750A5B002DEB9A /* Library.h */,
@@ -422,11 +437,14 @@
 			files = (
 				973C81371A750FFF002DEB9A /* LibraryManager.m in Sources */,
 				97E9E04B1A73B85A003D6EAE /* AppDelegate.m in Sources */,
+				97415A7E1A7664130093468D /* UserManager.m in Sources */,
 				97E9E04E1A73B85A003D6EAE /* EnterpriseLibary.xcdatamodeld in Sources */,
 				97BC96F01A74DA6600CC995D /* JsonDataFetcher.m in Sources */,
 				973C812B1A74EB5F002DEB9A /* Store.m in Sources */,
+				97415A841A7667720093468D /* UserStore.m in Sources */,
 				97BC96E81A74D96700CC995D /* CustomActivityIndicator.m in Sources */,
 				97BC96FC1A74E02A00CC995D /* BookTableViewCell.m in Sources */,
+				97415A811A76643B0093468D /* User.m in Sources */,
 				97BC96F91A74DBBF00CC995D /* Book.m in Sources */,
 				97BC96F51A74DB2C00CC995D /* DataConverter.m in Sources */,
 				973C81281A74EB49002DEB9A /* BookStore.m in Sources */,

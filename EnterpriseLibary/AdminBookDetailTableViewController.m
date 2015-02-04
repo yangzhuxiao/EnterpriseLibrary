@@ -20,4 +20,9 @@
 }
 
 
+- (IBAction)addBookButtonClicked:(id)sender {
+}
+
+- (IBAction)deleteBookButtonClicked:(id)sender {
+}
 @end

@@ -10,6 +10,7 @@
 #import "Library.h"
 #import "Book.h"
 #import "LibraryManager.h"
+#import "User.h"
 
 #pragma mark - keys in API
 // keys in Douban API
@@ -124,5 +125,33 @@ static const NSString *kCDBookCount = @"bookCount";
     [managedBook setValue:[NSNumber numberWithInteger:book.bookCount] forKey:(NSString *)kCDBookCount];
 
 }
+
+#pragma mark - User
+
++ (User *)userFromHTTPResponse:(id)object
+{
+    User *user = [[User alloc] init];
+    user.userId = [object valueForKey:(NSString *)kUserId];
+    user.userName = [object valueForKey:(NSString *)kUserName];
+    user.userPhoneNumber = [object valueForKey:(NSString *)kUserPhoneNumber];
+    return user;
+}
+
++ (User *)userFromManagedObject:(id)storedUser
+{
+    User *user = [[User alloc] init];
+    user.userId = [storedUser valueForKey:(NSString *)kCDUserId];
+    user.userName = [storedUser valueForKey:(NSString *)kCDUserName];
+    user.userPhoneNumber = [storedUser valueForKey:(NSString *)kCDPhoneNumber];
+    return user;
+}
+
++ (void)setManagedObject:(id)object forUser:(User *)user
+{
+    [object setValue:user.userId forKey:(NSString *)kCDUserId];
+    [object setValue:user.userName forKey:(NSString *)kCDUserName];
+    [object setValue:user.userPhoneNumber forKey:(NSString *)kCDPhoneNumber];
+}
+
 
 @end

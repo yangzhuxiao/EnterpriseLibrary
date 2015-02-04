@@ -35,6 +35,7 @@
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="records" inverseEntity="User" syncable="YES"/>
     </entity>
     <entity name="User" syncable="YES">
+        <attribute name="isAdmin" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="userId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="userName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="userPhoneNumber" optional="YES" attributeType="String" syncable="YES"/>
@@ -45,7 +46,7 @@
     <elements>
         <element name="Book" positionX="-63" positionY="-18" width="128" height="283"/>
         <element name="Library" positionX="-54" positionY="72" width="128" height="133"/>
-        <element name="User" positionX="-36" positionY="72" width="128" height="133"/>
+        <element name="User" positionX="-36" positionY="72" width="128" height="148"/>
         <element name="Record" positionX="-45" positionY="99" width="128" height="133"/>
     </elements>
 </model>

@@ -10,4 +10,11 @@
 
 @interface BookDetailTableViewController : UITableViewController
 
+@property (strong, nonatomic) IBOutlet UIImageView *bookImageView;
+@property (strong, nonatomic) IBOutlet UILabel *bookNameLabel;
+@property (strong, nonatomic) IBOutlet UILabel *bookAuthorsLabel;
+@property (strong, nonatomic) IBOutlet UILabel *bookPublisherLabel;
+@property (strong, nonatomic) IBOutlet UILabel *bookPublishDateLabel;
+@property (strong, nonatomic) IBOutlet UILabel *bookPriceLabel;
+
 @end

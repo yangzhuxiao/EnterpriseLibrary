@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 @class Book;
 @class Library;
+@class User;
 
 @interface DataConverter : NSObject
 
@@ -20,5 +21,10 @@
 + (Book *)bookFromDoubanBookObject:(id)object;
 + (Book *)bookFromStoreObject:(id)storedBook;
 + (void)setManagedObject:(id)managedBook forBook:(Book *)book;
+
+// users
++ (User *)userFromHTTPResponse:(id)object;
++ (User *)userFromManagedObject:(id)storedUser;
++ (void)setManagedObject:(id)object forUser:(User *)user;
 
 @end

@@ -501,6 +501,9 @@
                                                     <state key="normal" title="-">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="deleteBookButtonClicked:" destination="qc5-8U-gwB" eventType="touchUpInside" id="VUH-xy-cS9"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Hv-gM-bnJ">
                                                     <rect key="frame" x="506" y="8" width="30" height="30"/>
@@ -508,6 +511,9 @@
                                                     <state key="normal" title="+">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="addBookButtonClicked:" destination="qc5-8U-gwB" eventType="touchUpInside" id="qHy-e2-iLw"/>
+                                                    </connections>
                                                 </button>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="1" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6EC-TB-pde">
                                                     <rect key="frame" x="470" y="11" width="35" height="30"/>
@@ -557,6 +563,15 @@
                             <outlet property="delegate" destination="qc5-8U-gwB" id="sUl-hy-0O7"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="bookAuthorsLabel" destination="f7A-c9-HMF" id="0Wc-wq-h33"/>
+                        <outlet property="bookImageView" destination="nkr-yg-Q6b" id="Nda-Yg-kZb"/>
+                        <outlet property="bookNameLabel" destination="arh-So-dmb" id="zsh-IL-hcl"/>
+                        <outlet property="bookPriceLabel" destination="axu-RR-lsD" id="yhT-yQ-J2u"/>
+                        <outlet property="bookPublishDateLabel" destination="Q2R-fH-86Y" id="wV0-NM-iaB"/>
+                        <outlet property="bookPublisherLabel" destination="DEy-5R-uur" id="HK9-bS-KtT"/>
+                        <outlet property="bookTotalCountTextField" destination="6EC-TB-pde" id="xEI-aQ-iCF"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P5l-ZZ-7T0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -887,6 +902,14 @@
                             <outlet property="delegate" destination="RZh-5e-nyh" id="Bwg-86-rLO"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="bookAuthorsLabel" destination="DZj-UT-jaw" id="gaR-pj-LHA"/>
+                        <outlet property="bookImageView" destination="zmH-sj-43o" id="v3b-CW-0Kl"/>
+                        <outlet property="bookNameLabel" destination="WTT-cC-lN9" id="BiC-KZ-G60"/>
+                        <outlet property="bookPriceLabel" destination="acP-Ac-ywx" id="XHU-fF-SHC"/>
+                        <outlet property="bookPublishDateLabel" destination="6dk-bC-BDR" id="MCb-OO-gzH"/>
+                        <outlet property="bookPublisherLabel" destination="pWv-WE-F1Q" id="oca-cy-mqm"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r0o-kB-M0P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
